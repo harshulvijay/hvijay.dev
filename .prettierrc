@@ -1,0 +1,54 @@
+{
+	"arrowParens": "always",
+	"bracketSameLine": true,
+	"endOfLine": "lf",
+	"printWidth": 80,
+	"proseWrap": "always",
+	"quoteProps": "consistent",
+	"semi": true,
+	"singleQuote": false,
+	"svelteAllowShorthand": true,
+	"svelteBracketNewLine": false,
+	"svelteIndentScriptAndStyle": true,
+	"svelteSortOrder": "scripts-options-markup-styles",
+	"tabWidth": 2,
+	"trailingComma": "es5",
+	"useTabs": true,
+	"overrides": [
+		{
+			"files": "*.json",
+			"options": {
+				"parser": "json5"
+			},
+      "excludeFiles": [
+        "package.json",
+        "tsconfig.json"
+      ]
+		},
+		{
+			"files": "*.ts",
+			"options": {
+				"parser": "typescript"
+			}
+		},
+		{
+			"files": "*.html",
+			"options": {
+				"parser": "html"
+			}
+		},
+		{
+			"files": "*.scss",
+			"options": {
+				"parser": "scss"
+			}
+		},
+		{
+			"files": "*.svelte",
+			"options": {
+				"parser": "svelte",
+				"plugins": ["prettier-plugin-svelte"]
+			}
+		}
+	]
+}
