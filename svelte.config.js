@@ -7,8 +7,8 @@ const config = {
 
 	kit: {
 		adapter: adapter({
-      runtime: "edge"
-    }),
+			runtime: "edge",
+		}),
 	},
 };
 
