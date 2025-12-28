@@ -1,4 +1,4 @@
-@import './themes.css';
+@import "./themes.css";
 
 body {
 	margin: 0;
@@ -7,8 +7,9 @@ body {
 	min-height: 100%;
 
 	font-size: 1rem;
-	font-family: 'Atkinson Hyperlegible', 'Segoe UI', Helvetica, Arial, sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	font-family:
+		"Atkinson Hyperlegible", "Segoe UI", Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	line-height: 1.618;
 	font-variant-numeric: tabular-nums;
 
@@ -44,7 +45,8 @@ body.background {
 
 * {
 	box-sizing: border-box;
-	transition: background var(--transition-duration) ease-in,
+	transition:
+		background var(--transition-duration) ease-in,
 		background-color var(--transition-duration) ease-in;
 }
 
@@ -59,7 +61,7 @@ h2,
 h3 {
 	margin: 0;
 
-	font-family: 'Comfortaa Variable', sans-serif;
+	font-family: "Comfortaa Variable", sans-serif;
 	color: var(--app-color-dark);
 	line-height: 1.3;
 

@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { mdiMoonFull, mdiWhiteBalanceSunny } from '@mdi/js';
-	import { onMount } from 'svelte';
-	import { writable } from 'svelte/store';
-	import Icon from './Icon.svelte';
-	import Moon from './Moon.svelte';
-	import RadioactiveSvg from './RadioactiveSVG.svelte';
+	import { mdiMoonFull, mdiWhiteBalanceSunny } from "@mdi/js";
+	import { onMount } from "svelte";
+	import { writable } from "svelte/store";
+	import Icon from "./Icon.svelte";
+	import Moon from "./Moon.svelte";
+	import RadioactiveSvg from "./RadioactiveSVG.svelte";
 
-	type Theme = 'light' | 'midday' | 'dark' | 'radioactive';
+	type Theme = "light" | "midday" | "dark" | "radioactive";
 
-	const theme = writable<Theme>('light');
+	const theme = writable<Theme>("light");
 
 	let init = $state(false);
 
 	// List of themes
-	const themes: Theme[] = ['light', 'midday', 'dark', 'radioactive'];
+	const themes: Theme[] = ["light", "midday", "dark", "radioactive"];
 	let current_theme_index = $state(0);
 
 	function nextTheme(currentThemeIndex: number) {
@@ -24,8 +24,10 @@
 
 	onMount(() => {
 		// Initialize with localstorage
-		const local_theme = localStorage.getItem('theme');
-		const browser_prefers_dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const local_theme = localStorage.getItem("theme");
+		const browser_prefers_dark = window.matchMedia(
+			"(prefers-color-scheme: dark)"
+		).matches;
 
 		current_theme_index = !local_theme
 			? browser_prefers_dark
@@ -55,23 +57,23 @@
 		});
 		document.body.classList.add($theme);
 
-		localStorage.setItem('theme', $theme);
+		localStorage.setItem("theme", $theme);
 	});
 </script>
 
 <svelte:head>
 	<meta
 		name="theme-color"
-		content={['white', '#f9dec9', '#222428', '#13132a'][current_theme_index]}
-	/>
+		content={["white", "#f9dec9", "#222428", "#13132a"][current_theme_index]} />
 
-	<link rel="icon" href="/icons/favicon-{dev ? 'dev' : $theme}.{dev ? 'svg' : 'png'}" />
+	<link
+		rel="icon"
+		href="/icons/favicon-{dev ? 'dev' : $theme}.{dev ? 'svg' : 'png'}" />
 </svelte:head>
 
 <button
 	onclick={() => (current_theme_index = nextTheme(current_theme_index))}
-	aria-label={themes[current_theme_index]}
->
+	aria-label={themes[current_theme_index]}>
 	{#if current_theme_index === 0}
 		<Icon path={mdiWhiteBalanceSunny} />
 	{:else if current_theme_index === 1}

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { quintOut } from 'svelte/easing';
-	import { tweened } from 'svelte/motion';
+	import { onMount } from "svelte";
+	import { quintOut } from "svelte/easing";
+	import { tweened } from "svelte/motion";
 
 	const reading_progress = tweened(0, {
 		easing: quintOut,
@@ -13,7 +13,10 @@
 	 * @param func - Function to throttle.
 	 * @param threshold - The delay to avoid recalling the function.
 	 */
-	function throttle<T extends (...args: any[]) => any>(func: T, threshold: number): T {
+	function throttle<T extends (...args: any[]) => any>(
+		func: T,
+		threshold: number
+	): T {
 		let last_args: Parameters<T> | null;
 		let should_wait = false;
 		function timeout_function(self: any) {
@@ -49,7 +52,7 @@
 	onMount(() => {
 		const abort_controller = new AbortController();
 
-		document.addEventListener('scroll', throttle(handle_progress_bar, 50), {
+		document.addEventListener("scroll", throttle(handle_progress_bar, 50), {
 			signal: abort_controller.signal,
 		});
 

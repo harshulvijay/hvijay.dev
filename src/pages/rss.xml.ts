@@ -1,14 +1,14 @@
-import rss from '@astrojs/rss';
-import { get_list } from '@utils/blog';
-import type { APIRoute } from 'astro';
+import { get_list } from "@utils/blog";
+import type { APIRoute } from "astro";
+import rss from "@astrojs/rss";
 
 export const GET = (async () => {
 	return rss({
-		title: "Puru's Blog",
+		title: "Harshul's Blog",
 		// `<description>` field in output xml
-		description: 'Everything web development, engineerring, procrastination, and life.',
+		description: "My corner of randomess on the internet",
 
-		site: 'https://puruvj.dev',
+		site: "https://hvijay.dev",
 
 		items: (await get_list()).map((post) => ({
 			title: post.title,

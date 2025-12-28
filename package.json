@@ -1,12 +1,14 @@
 {
-	"name": "puruvj.dev",
+	"name": "hvijay.dev",
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "astro build",
+		"build": "pnpm lint && astro build",
 		"preview": "astro preview",
+		"format": "prettier --ignore-path ./.gitignore --ignore-path ./.prettierignore . --write",
+		"lint": "prettier --ignore-path ./.gitignore --ignore-path ./.prettierignore . --check && eslint .",
 		"astro": "astro"
 	},
 	"dependencies": {
@@ -18,17 +20,22 @@
 		"astro-tweet": "^0.0.4"
 	},
 	"devDependencies": {
-		"@astrojs/check": "^0.9.4",
-		"@astrojs/mdx": "^4.0.1",
-		"@astrojs/rss": "^4.0.10",
-		"@astrojs/svelte": "^7.0.1",
-		"astro": "^5.0.3",
+		"@astrojs/check": "^0.9.6",
+		"@astrojs/mdx": "^4.3.13",
+		"@astrojs/rss": "^4.0.14",
+		"@astrojs/svelte": "^7.2.4",
+		"astro": "^5.16.6",
 		"canvaskit-wasm": "^0.39.1",
+		"eslint": "^9.39.2",
 		"hastscript": "^9.0.0",
 		"lightningcss": "^1.28.2",
+		"prettier": "^3.7.4",
+		"prettier-plugin-sort-imports": "^1.8.9",
+		"prettier-plugin-svelte": "^3.4.1",
 		"rehype-autolink-headings": "^7.1.0",
 		"rehype-external-links": "^3.0.0",
 		"rehype-slug": "^6.0.0",
+		"sass-embedded": "^1.97.1",
 		"sharp": "^0.33.5",
 		"svelte": "^5.7.1",
 		"typescript": "^5.7.2"
