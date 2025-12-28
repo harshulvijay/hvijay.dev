@@ -1,5 +1,5 @@
 ---
-import profile_pic from '@assets/puru-pic.jpg';
+import profile_pic from '@assets/my-pic.jpg';
 import BlogList from '@components/BlogList.astro';
 import ContactMeLink from '@components/ContactMeLink.astro';
 import ContactMeSVG from '@components/ContactMeSVG.astro';
@@ -15,38 +15,43 @@ const img = await getImage({
 });
 
 const list = await get_list();
-list.length = 6;
+// cap to 6 posts
+if (list.length > 6) {
+	list.length = 6;
+}
 ---
 
 <BaseLayout>
 	<Fragment slot="head">
-		<meta name="description" content="Puru's Blog" />
+		<meta name="description" content="Harshul's Blog" />
 
-		<meta property="og:description" content="Puru's Blog" />
-		<meta property="og:image" content={`https://puruvj.dev/og/home.png`} />
-		<meta property="og:url" content={`https://puruvj.dev`} />
+		<meta property="og:description" content="Harshul's Blog" />
+		<meta property="og:image" content={`https://hvijay.dev/og/home.png`} />
+		<meta property="og:url" content={`https://hvijay.dev`} />
 	</Fragment>
 
 	<main>
 		<br />
 		<br /><br />
-		<section class="puru-intro">
+		<section class="my-intro">
 			<!-- svelte-ignore a11y-img-redundant-alt -->
 			<div class="photo-area" style={`background-image: url(${img.src})`}></div>
 
 			<div id="written">
-				<h1>hi, i'm <mark>puru</mark></h1>
+				<h1>hi, i'm <mark>harshul</mark></h1>
 				<h2 id="about-me">
-					i am a <mark>fullstack web developer</mark>
-					based in india with {
-						Math.floor((Date.now() - +new Date('22 March, 2015')) / (1000 * 60 * 60 * 24 * 365))
-					} years of experience. i make
-					<mark>blazing fast and performant</mark>
-					web apps.
+					i am an <mark>undergrad</mark>
+					based in <mark>india</mark>, been learning to code for a while now (~{
+						Math.floor((Date.now() - +new Date('March, 2015')) / (1000 * 60 * 60 * 24 * 365))
+					} years<sup>*</sup>) <br />
+					i love <mark>playing ctfs</mark>, especially focusing on <mark>reverse engineering</mark>
+					and a little bit of <mark>web</mark>
+					<br />
 				</h2>
 
 				<p style="color: rgba(var(--app-color-dark-rgb),0.8)">
-					*yes, I go by an inverted black&white scared cat photo. <br /> *no, the site is not hacked.
+					* I know I didn't change this line after I forked the repo. that's intentional <br />
+					* still suffer from impostor syndrome as strong as when I was just starting to learn
 				</p>
 			</div>
 		</section>
@@ -97,7 +102,7 @@ list.length = 6;
 		background-size: cover;
 	}
 
-	.puru-intro {
+	.my-intro {
 		display: flex;
 		justify-content: space-between;
 		flex-direction: row-reverse;
@@ -175,7 +180,7 @@ list.length = 6;
 	}
 
 	@media screen and (max-width: 600px) {
-		.puru-intro {
+		.my-intro {
 			flex-direction: column;
 		}
 

@@ -47,7 +47,7 @@ body {
 		--app-color-shell: white;
 
 		/* heading font */
-		--heading-font-family: 'Comfortaa Variable', sans-serif;
+		--heading-font-family: "Comfortaa Variable", sans-serif;
 	}
 }
 
@@ -70,7 +70,7 @@ body.light {
 	--app-color-shell: white;
 
 	/* heading font */
-	--heading-font-family: 'Comfortaa Variable', sans-serif;
+	--heading-font-family: "Comfortaa Variable", sans-serif;
 }
 
 body.midday {

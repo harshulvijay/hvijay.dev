@@ -1,0 +1,22 @@
+.prettierrc
+svelte.config.js
+tsconfig.json
+
+# build files
+build
+
+# generated files
+**/generated
+
+# package managers
+package.json
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# .*ignore files
+.gitignore
+.prettierignore
+
+# markdown files
+*.md
