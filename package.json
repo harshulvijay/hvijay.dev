@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
-		"build": "pnpm lint && astro build",
+		"build": "astro build",
+		"build:check": "pnpm lint && astro build",
 		"preview": "astro preview",
 		"format": "prettier --ignore-path ./.gitignore --ignore-path ./.prettierignore . --write",
 		"lint": "prettier --ignore-path ./.gitignore --ignore-path ./.prettierignore . --check && eslint .",
