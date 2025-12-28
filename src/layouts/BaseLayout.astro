@@ -1,17 +1,17 @@
 ---
-import '@css/global.css';
-import '@fontsource-variable/comfortaa';
-import '@fontsource-variable/jetbrains-mono';
-import '@fontsource/atkinson-hyperlegible';
+import "@css/global.css";
+import "@fontsource-variable/comfortaa";
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource/atkinson-hyperlegible";
 
 // Font preloads
-import comfortaa_url from '@fontsource-variable/comfortaa/files/comfortaa-latin-wght-normal.woff2';
-import jetbrains_mono_url from '@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2';
-import atkinson_hyperlegible_url from '@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-ext-400-normal.woff2';
+import comfortaa_url from "@fontsource-variable/comfortaa/files/comfortaa-latin-wght-normal.woff2";
+import jetbrains_mono_url from "@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2";
+import atkinson_hyperlegible_url from "@fontsource/atkinson-hyperlegible/files/atkinson-hyperlegible-latin-ext-400-normal.woff2";
 
-import Footer from '@components/Footer.astro';
-import Nav from '@components/Nav.astro';
-import { ClientRouter } from 'astro:transitions';
+import Footer from "@components/Footer.astro";
+import Nav from "@components/Nav.astro";
+import { ClientRouter } from "astro:transitions";
 
 type Props = {
 	title?: string;
@@ -24,7 +24,7 @@ const { title, background = true } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>{title ? `${title} | hvijay.dev` : 'hvijay.dev'}</title>
+		<title>{title ? `${title} | hvijay.dev` : "hvijay.dev"}</title>
 		<meta property="og:title" content=`${title} | hvijay.dev` />
 
 		<slot name="head" />
@@ -36,7 +36,13 @@ const { title, background = true } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<ClientRouter />
 
-		<link rel="preload" as="font" href={comfortaa_url} type="font/woff2" crossorigin="anonymous" />
+		<link
+			rel="preload"
+			as="font"
+			href={comfortaa_url}
+			type="font/woff2"
+			crossorigin="anonymous"
+		/>
 
 		<link
 			rel="preload"
@@ -58,13 +64,17 @@ const { title, background = true } = Astro.props;
 	<body transition:persist class:list={{ background }}>
 		<script is:inline data-astro-rerun>
 			function swap_theme() {
-				const browserPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-				const localStorageTheme = localStorage.getItem('theme');
-				document.body?.classList?.add(localStorageTheme ?? (browserPrefersDark ? 'dark' : 'light'));
+				const browserPrefersDark = window.matchMedia(
+					"(prefers-color-scheme: dark)"
+				).matches;
+				const localStorageTheme = localStorage.getItem("theme");
+				document.body?.classList?.add(
+					localStorageTheme ?? (browserPrefersDark ? "dark" : "light")
+				);
 			}
 			swap_theme();
 
-			document.addEventListener('astro:after-swap', swap_theme);
+			document.addEventListener("astro:after-swap", swap_theme);
 		</script>
 
 		<div id="root">
@@ -75,6 +85,22 @@ const { title, background = true } = Astro.props;
 
 			<Footer />
 		</div>
+
+		<!-- Microsoft Clarity tracking code -->
+		<script is:inline type="text/javascript">
+			(function (c, l, a, r, i, t, y) {
+				c[a] =
+					c[a] ||
+					function () {
+						(c[a].q = c[a].q || []).push(arguments);
+					};
+				t = l.createElement(r);
+				t.async = 1;
+				t.src = "https://www.clarity.ms/tag/" + i;
+				y = l.getElementsByTagName(r)[0];
+				y.parentNode.insertBefore(t, y);
+			})(window, document, "clarity", "script", "r99r2iv06l");
+		</script>
 	</body>
 </html>
 
