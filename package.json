@@ -15,7 +15,7 @@
 	"dependencies": {
 		"@fontsource-variable/comfortaa": "^5.1.0",
 		"@fontsource-variable/jetbrains-mono": "^5.1.1",
-		"@fontsource/atkinson-hyperlegible": "^5.1.0",
+		"@fontsource/atkinson-hyperlegible": "^5.2.8",
 		"@mdi/js": "^7.4.47",
 		"astro-og-canvas": "^0.5.5",
 		"astro-tweet": "^0.0.4"
